@@ -1,0 +1,12 @@
+{
+    "name": "peip/bootstrap",
+    "description": "bootstrap.php file for the PEIP project",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Timo Michna",
+            "email": "timomichna@yahoo.de"
+        }
+    ]
+}
