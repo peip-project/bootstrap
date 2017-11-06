@@ -1,0 +1,46 @@
+language: php
+
+matrix:
+
+jobs:
+  fast_finish: true
+  allow_failures:
+      - php: 7.2
+      - php: hhvm
+      - php: nightly
+  include:
+    - # test
+    - stage: Test
+      php: 7.1
+      before_script:
+        - phpenv config-rm xdebug.ini
+        - composer selfupdate
+        - composer install --no-interaction
+      script:
+        - php ./autoload.php
+    - # test
+    - stage: Test
+      php: 7.2
+      before_script:
+        - composer selfupdate
+        - composer update --no-interaction
+      script:
+        - php ./autoload.php
+    - # test
+    - stage: Test
+      php: hhvm
+      before_script:
+        - composer selfupdate
+        - composer update --no-interaction
+      script:
+        - php ./autoload.php
+    - # test
+    - stage: Test
+      php: nightly
+      before_script:
+        - composer selfupdate
+        - composer update --no-interaction
+      script:
+        - php ./autoload.php
+
+
