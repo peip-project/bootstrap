@@ -16,8 +16,7 @@ if ($pharPath && is_file("$pharPath/vendor/autoload.php")) {
     $depth = 5;
     for ($x = 0; $x <= $depth; $x++) {
         $prefix = str_repeat('../', $x);
-        echo $autoload = __DIR__ . '/'.$prefix.'autoload.php';
-        echo PHP_EOL;
+        $autoload = __DIR__ . '/'.$prefix.'vendor/autoload.php';
         if (file_exists($autoload)) {
             require_once $autoload;
             return;
